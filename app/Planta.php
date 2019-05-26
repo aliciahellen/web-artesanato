@@ -3,7 +3,6 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
-use function Opis\Closure\unserialize;
 
 class Planta extends Model
 {
@@ -69,16 +68,9 @@ class Planta extends Model
     protected $casts = [
 
     ];
-
-
-    // having this mutator
-    //public function setImagensAttribute($value){
-    //    $this->imagens = $value;
-    //}
     
     public function imagens()
     {
-        //return $this->hasMany(Imagem::class, 'planta_id', 'id');
         return $this->hasMany(Imagem::class);
     }
 

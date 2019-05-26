@@ -30,7 +30,7 @@ return [
     |
     */
 
-    'logo' => '<b>'.env('APP_NAME', 'Laravel').'</b>',
+    'logo' => '<b>Artesãos</b>',
 
     'logo_mini' => '<b>APP</b>',
 
@@ -45,7 +45,7 @@ return [
     |
     */
 
-    'skin' => 'blue',
+    'skin' => 'purple',
 
     /*
     |--------------------------------------------------------------------------
@@ -85,7 +85,7 @@ return [
     |
     */
 
-    'dashboard_url' => 'home',
+    'dashboard_url' => 'inicio',
 
     'logout_url' => 'logout',
 
@@ -119,11 +119,10 @@ return [
             'url'  => 'admin/planta',
             'icon'        => 'tree',
         ],
-        'Usuário',
         [
-            'text' => 'Perfil',
-            'url'  => 'admin/settings',
-            'icon' => 'user',
+            'text' => 'Artesãos',
+            'url'  => 'admin/artesao',
+            'icon'        => 'list',
         ],
     ],
 
