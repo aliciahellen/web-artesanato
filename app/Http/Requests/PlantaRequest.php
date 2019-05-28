@@ -1,5 +1,4 @@
 <?php
-
 namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
@@ -18,9 +17,7 @@ class PlantaRequest extends FormRequest
      */
     public function __construct(Request $request)
     {
-        //print_r($request->all());
-        //print_r(array_key_exists($request->get('grau_ameaca_iucn'), Planta::lista_iucn()));
-        //exit;
+        
     }
 
     /**

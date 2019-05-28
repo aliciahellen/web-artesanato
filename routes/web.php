@@ -35,28 +35,24 @@ Route::group(['prefix' => 'admin'], function () {
 	});
 
 
-	Route::group(['prefix' => 'artesao', 'as' => 'planta.'], function () {
+	Route::group(['prefix' => 'artesao', 'as' => 'artesao.'], function () {
 		Route::get('/', ['as' => 'index.get', 'uses' => 'ArtesaoController@index']);
-		//Route::get('/{id}', ['as' => 'view.get', 'uses' => 'PlantaController@viewGet'])->where('id', '\d+');
+		Route::get('/{id}', ['as' => 'view.get', 'uses' => 'ArtesaoController@viewGet'])->where('id', '\d+');
 		
-		//Route::get('/add', ['as' => 'add.get', 'uses' => 'PlantaController@addGet']);
-		//Route::post('/add', ['as' => 'add.post', 'uses' => 'PlantaController@addPost']);
+		Route::get('/add', ['as' => 'add.get', 'uses' => 'ArtesaoController@addGet']);
+		Route::post('/add', ['as' => 'add.post', 'uses' => 'ArtesaoController@addPost']);
 
-		//Route::get('/edit/{id}', ['as' => 'edit.get', 'uses' => 'PlantaController@editGet'])->where('id', '\d+');
+		Route::get('/edit/{id}', ['as' => 'edit.get', 'uses' => 'ArtesaoController@editGet'])->where('id', '\d+');
 		//Route::post('/edit/{id}', ['as' => 'edit.post', 'uses' => 'PlantaController@editPost'])->where('id', '\d+');
 
-		//Route::delete('/del/{id}', ['as' => 'delete', 'uses' => 'PlantaController@delete'])->where('id', '\d+');
-
-		//Route::get('/{id}/imagens', ['as' => 'imagens.get', 'uses' => 'PlantaController@imagensGet'])->where('id', '\d+');
-		//Route::get('/{id}/biomas', ['as' => 'biomas.get', 'uses' => 'PlantaController@biomasGet'])->where('id', '\d+');
-		//Route::get('/{id}/full', ['as' => 'full.get', 'uses' => 'PlantaController@plantaFullGet'])->where('id', '\d+');
+		Route::delete('/del/{id}', ['as' => 'delete', 'uses' => 'ArtesaoController@delete'])->where('id', '\d+');
 	});
 
 });
 
 Route::group(['prefix' => 'api', 'as' => 'api.'], function () {
-	Route::group(['prefix' => 'planta', 'as' => 'planta.'], function () {
-		Route::get('/', ['as' => 'plantas.get', 'uses' => 'PlantaController@apiPlantasGet']);
-		Route::get('/{id}', ['as' => 'planta.get', 'uses' => 'PlantaController@apiPlantaGet'])->where('id', '\d+');		
+	Route::group(['prefix' => 'artesao', 'as' => 'artesao.'], function () {
+		Route::get('/', ['as' => 'artesoes.get', 'uses' => 'ArtesaoController@apiArtesaosGet']);
+		Route::get('/{id}', ['as' => 'artesao.get', 'uses' => 'ArtesaoController@apiArtesaoGet'])->where('id', '\d+');		
 	});
 });	

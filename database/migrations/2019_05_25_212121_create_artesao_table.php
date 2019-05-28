@@ -18,6 +18,7 @@ class CreateArtesaoTable extends Migration
             $table->string('nome', 255)->nullable(false)->comment('Nome do Artesão');
             $table->string('endereco', 255)->nullable(false)->comment('Endereço do Artesão');
             $table->string('telefone', 11)->nullable(true)->comment('Telefone do Artesão');
+            $table->string('email', 100)->nullable(true)->comment('E-mail do Artesão');
             $table->decimal('loc_latitude', 10, 7)->nullable(true)->comment('Localização: Longitude do Endereço do Artesão');
             $table->decimal('loc_longitude', 10, 7)->nullable(true)->comment('Localização: Latitudade do Endereço do Artesão');
             $table->text('descricao')->nullable(true)->comment('Descrição da Artesão');

@@ -16,11 +16,11 @@ class Artesao extends Model
     public $timestamps = false;
     
     protected $fillable = [
-        'id', 'nome', 'endereco', 'telefone', 'loc_latitude', 'loc_longitude', 'descricao', 'tipos_artesanato', 'finalidades_producao', 'tecnicas_producao', 'imagens'
+        'id', 'nome', 'endereco', 'telefone', 'email', 'loc_latitude', 'loc_longitude', 'descricao', 'tipos_artesanato', 'finalidades_producao', 'tecnicas_producao', 'imagens'
     ];
 
     protected $visible = [
-        'id', 'nome', 'endereco', 'telefone', 'loc_latitude', 'loc_longitude', 'descricao', 'tipos_artesanato', 'finalidades_producao', 'tecnicas_producao', 'imagens'
+        'id', 'nome', 'endereco', 'telefone', 'email', 'loc_latitude', 'loc_longitude', 'descricao', 'tipos_artesanato', 'finalidades_producao', 'tecnicas_producao', 'imagens'
     ];
 
     public static function getTableName(){

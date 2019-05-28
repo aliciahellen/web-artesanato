@@ -28,4 +28,11 @@ class Helper
         
 		return $input;
 	}
+
+	public static function maskPhoneNumber($str_tel) {
+		if( strlen($str_tel) == 10){
+			return "(".substr($str_tel, 0, 2).") ".substr($str_tel, 2, 4)."-".substr($str_tel,6);
+		}
+		return "(".substr($str_tel, 0, 2).") ".substr($str_tel, 2, 5)."-".substr($str_tel,7);
+	}
 }
