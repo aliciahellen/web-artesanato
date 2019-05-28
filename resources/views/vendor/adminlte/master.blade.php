@@ -131,6 +131,14 @@
 
         #lightboxOverlay { position: fixed !important; top: 0; left: 0; height: 100% !important; width: 100% !important; }
         #lightbox { position: fixed !important; top: 50% !important; transform: translateY(-50%); }
+
+        .pagination>.active>a, .pagination>.active>a:focus, .pagination>.active>a:hover, .pagination>.active>span, .pagination>.active>span:focus, .pagination>.active>span:hover {
+            background-color: #605ca8;
+            border-color: #605ca8;
+        }
+        .pagination>li>a, .pagination>li>span {
+            color: #605ca8;
+        }
     </style>
 
     @if(config('adminlte.plugins.datatables'))
@@ -178,6 +186,7 @@
 <script src="{{ asset('public/vendor/adminlte/vendor/bootstrap-datepicker/dist/locales/bootstrap-datepicker.pt-BR.min.js') }}" charset="UTF-8"></script>
 <script src="{{ asset('public/vendor/adminlte/vendor/bootstrap-filestyle/src/bootstrap-filestyle.min.js') }}"></script>
 <script src="{{ asset('public/vendor/adminlte/vendor/lightbox2/dist/js/lightbox.min.js') }}"></script>
+<script src="{{ asset('public/vendor/adminlte/vendor/jquery-mask-plugin/dist/jquery.mask.min.js') }}"></script>
 
 <script src="{{ asset('public/js/functions.js') }}"></script>
 

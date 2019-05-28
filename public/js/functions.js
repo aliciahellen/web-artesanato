@@ -53,7 +53,7 @@ function templateModalDelete(titulo, mensagem, data){
 					<div class="modal-content">\
 						<div class="modal-header">\
 							<button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>\
-							<h4 class="modal-title" id="modalLabel"><strong>'+titulo+'}</strong></h4>\
+							<h4 class="modal-title" id="modalLabel"><strong>'+titulo+'</strong></h4>\
 						</div>\
 						<div class="modal-body">\
 							'+mensagem+'\
@@ -162,6 +162,23 @@ function configICheck(str_element, config){
 		};
 	}
 	$(str_element).iCheck(config);
+}
+
+function configjQueryMask(str_element, config){
+	if(!str_element){
+		str_element = '.phone';
+	}
+	if(!config){
+		config = {
+			onKeyPress: function (val, e, field, config) {
+				field.mask(behaviorMask.apply({}, arguments), config);
+			}
+		};
+	}
+	var behaviorMask = function (val) {
+		return val.replace(/\D/g, '').length === 11 ? '(00) 00000-0000' : '(00) 0000-00009';
+	};
+	$(str_element).mask(behaviorMask, config);
 }
 
 
