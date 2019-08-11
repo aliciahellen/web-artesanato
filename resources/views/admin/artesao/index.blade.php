@@ -36,7 +36,7 @@
 					</div>
 					@endif
 					<div class="box-body table-responsive no-padding">
-						<table class="table table-bordered text-center">
+						<table class="table table-bordered text-center" id="tabela_artesao">
 							<tbody>
 								<tr>
 									<th style="min-width: 10px !important;vertical-align:middle;" class="align-middle">#</th>
@@ -45,6 +45,7 @@
 									<th style="vertical-align:middle;" class="align-middle">Telefone</th>
 									<th style="vertical-align:middle;" style="width: 40px;" class="align-middle">Ações</th>
 								</tr>
+								@if(!empty($artesaos) & count($artesaos) > 0)
 								@foreach($artesaos as $artesao)
 								<tr>
 									<td style="vertical-align:middle;" class="align-middle">{{ $artesao->id }}</td>
@@ -64,6 +65,11 @@
 									</td>
 								</tr>
 								@endforeach
+								@else
+								<tr>
+									<td colspan="5">Nenhum registro foi encontrado.</td>
+								</tr>
+								@endif
 							</tbody>
 						</table>
 					</div>
@@ -85,6 +91,12 @@
 
 @section('custom_js')
 	<script>
+		//$('#tabela_artesao').DataTable( {
+		//	language: {
+		//		infoEmpty: "No records available - Got it?",
+		//	}
+		//});
+
 		$(".delete2").on("submit", function(value){
 			console.log(value);
 			return confirm("Desejar realmente Excluir?");

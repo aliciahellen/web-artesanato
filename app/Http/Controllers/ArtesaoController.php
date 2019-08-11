@@ -11,6 +11,7 @@ use App\Http\Requests\ArtesaoRequest;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Redirect;
 use App\Imagem;
+use App\Helpers\Helper;
 
 class ArtesaoController extends Controller
 {
@@ -44,8 +45,7 @@ class ArtesaoController extends Controller
         DB::beginTransaction();
         try {
             $artesao = Artesao::create($request->only([
-                'nome', 'endereco', 'telefone', 'email', 
-                'loc_latitude', 'loc_longitude', 'descricao',
+                'nome', 'endereco', 'telefone', 'email', 'descricao',
             ]));
             if ($artesao->id) {
                 $artesao->tipos_artesanato()->sync($request->input('tipos_artesanato'));
@@ -87,19 +87,51 @@ class ArtesaoController extends Controller
 
     public function editGet($id)
     {
-        //$planta = Planta::where('id', '=', $id)->with(['biomas', 'dist_geografica', 'imagens'])->first();
-        //if(isset($planta->id)){
-        //    $biomas = Bioma::all();
-        //    $estados = Estado::all();
-        //    $lista_iucn = Planta::lista_iucn();
-        //    $lista_meses = Planta::lista_meses();
-        //    return view('admin.planta.edit', compact('planta', 'biomas', 'estados', 'lista_iucn', 'lista_meses'));
-        //}else{
-        //    return redirect()->route('planta.index.get')->with('erro', 'Planta Inválida!');
-        //} 
-        
-        //print_r($planta->toArray());
-        //exit;
+        $artesao = Artesao::where('id', '=', $id)->with(['tipos_artesanato', 'finalidades_producao', 'tecnicas_producao', 'imagens'])->first();
+        if(isset($artesao->id)){
+            $tipos_artesanato = TipoArtesanato::all();
+            $finalidades_producao = FinalidadeProducao::all();
+            $tecnicas_producao = TecnicaProducao::all();
+            return view('admin.artesao.edit', compact('artesao', 'tipos_artesanato', 'finalidades_producao', 'tecnicas_producao'));
+        }else{
+            return redirect()->route('artesao.index.get')->with('erro', 'Artesão Inválido!');
+        }
+    }
+
+    public function editPost(ArtesaoRequest $request)
+    {
+        $artesao = Artesao::find($request->id);
+        $sucesso = false;
+        DB::beginTransaction();
+        try {
+            if ($artesao->id) {
+                $artesao->update($request->only([
+                    'nome', 'endereco', 'telefone', 'email', 'descricao',
+                ]));
+                $artesao->tipos_artesanato()->sync($request->input('tipos_artesanato'));
+                $artesao->finalidades_producao()->sync($request->input('finalidades_producao'));
+                $artesao->tecnicas_producao()->sync($request->input('tecnicas_producao'));
+                $imagens = Helper::remove_empty_itens_array($request->input('imagens'), true);
+                $artesao->imagens()->delete();
+                if(!empty($imagens)){
+                    foreach ($imagens as $key => $imagem) {
+                        $imagens[$key]['artesao_id'] = $artesao->id;
+                        $imagens[$key] = new Imagem($imagens[$key]);
+                    }
+                    $artesao->imagens()->saveMany($imagens);
+                }
+                $sucesso = true;
+            }
+        } catch (\Exception $e) {
+
+        }
+        if ($sucesso) {
+            DB::commit();
+            return redirect()->route('artesao.view.get', $artesao->id)->with('sucesso', 'Artesão Atualizado com Sucesso!');
+        } else {
+            DB::rollback();
+            return Redirect::back()->with('erro','Erro ao Atualizar Artesão!');
+        }       
     }
 
     public function delete($id)

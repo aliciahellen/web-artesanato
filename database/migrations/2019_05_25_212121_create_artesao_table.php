@@ -19,8 +19,6 @@ class CreateArtesaoTable extends Migration
             $table->string('endereco', 255)->nullable(false)->comment('Endereço do Artesão');
             $table->string('telefone', 11)->nullable(true)->comment('Telefone do Artesão');
             $table->string('email', 100)->nullable(true)->comment('E-mail do Artesão');
-            $table->decimal('loc_latitude', 10, 7)->nullable(true)->comment('Localização: Longitude do Endereço do Artesão');
-            $table->decimal('loc_longitude', 10, 7)->nullable(true)->comment('Localização: Latitudade do Endereço do Artesão');
             $table->text('descricao')->nullable(true)->comment('Descrição da Artesão');
             $table->timestamp('dthr_cadastro')->default(DB::raw('CURRENT_TIMESTAMP'))->comment('Data/Hora de Cadastro: 2019-03-01 16:42:11');
             $table->timestamp('dthr_alteracao')->default(DB::raw('CURRENT_TIMESTAMP'))->comment('Data/Hora de Alteração: 2019-03-01 16:42:11'); //PostgreSQL e MySQL

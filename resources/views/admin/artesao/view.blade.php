@@ -1,7 +1,5 @@
 @extends('adminlte::page')
 
-
-
 @section('title', 'Visualizar Artesão')
 
 @section('content_header')
@@ -9,8 +7,6 @@
 @stop
 
 @section('content')
-	<form action="{{ route('planta.add.post') }}" method="post">
-		{!! csrf_field() !!}
 		<!-- SELECT2 EXAMPLE -->
 		<div class="box box-primary">
 			<div class="box-header with-border">
@@ -18,6 +14,20 @@
 			</div>
 			<!-- /.box-header -->
 			<div class="box-body">
+				@if (session()->has('sucesso'))
+				<div class="alert alert-success alert-dismissible">
+					<button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
+					<h4><i class="icon fa fa-check"></i> Sucesso!</h4>
+					{{ session('sucesso') }}
+				</div>
+				@endif
+				@if (session()->has('erro'))
+				<div class="alert alert-danger alert-dismissible">
+					<button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
+					<h4><i class="icon fa fa-check"></i> Erro!</h4>
+					{{ session('erro') }}
+				</div>
+				@endif
 				<div class="row">
 					<div class="col-md-6">
 						<div class="form-group">
@@ -36,19 +46,7 @@
 							<label for="nome">E-mail</label>
 							<input type="text" class="form-control" name="email" id="email" placeholder="" value="{{ $artesao['email'] }}" disabled>
 						</div>
-						<!-- <div class="form-group">
-							<label for="nome">Latitude</label>
-							<input type="text" class="form-control" name="latitude" id="latitude" placeholder="" value="{{ $artesao['loc_latitude'] }}" disabled>
-						</div>
 						<div class="form-group">
-							<label for="nome">Longitude</label>
-							<input type="text" class="form-control" name="longitude" id="longitude" placeholder="" value="{{ $artesao['loc_longitude'] }}" disabled>
-						</div> -->
-					</div>
-					<!-- /.col -->
-					
-					<div class="col-md-6">
-						<!-- <div class="form-group">
 							<label>Tipos de Artesanato</label>
 							<select name="tipos_artesanato[]" class="form-control select2" multiple="multiple" data-placeholder="" style="width: 100%;" disabled>
 								@foreach($tipos_artesanato as $skey=>$tipo_artesanato)
@@ -57,9 +55,12 @@
 									</option>
 								@endforeach
 							</select>
-						</div> -->
+						</div>
 						<!-- /.col -->
-
+					</div>
+					<!-- /.col -->
+					
+					<div class="col-md-6">
 						<div class="form-group">
 							<label>Finalidades da Produção</label>
 							<select name="finalidades_producao[]" class="form-control select2" multiple="multiple" data-placeholder="" style="width: 100%;" disabled>
@@ -86,7 +87,7 @@
 
 						<div class="form-group {{ $errors->has('descricao') ? 'has-error' : '' }}">
 							<label for="descricao">Descrição</label>
-							<textarea class="form-control" rows="6" name="descricao" id="descricao" placeholder="Informe a Descrição" disabled>{{ $artesao['descricao'] }}</textarea>
+							<textarea class="form-control" rows="8" name="descricao" id="descricao" placeholder="Informe a Descrição" disabled>{{ $artesao['descricao'] }}</textarea>
 						</div>
 						<!-- /.form-group -->
 					</div>
@@ -163,7 +164,6 @@
 			</div>
 		</div>
 		<!-- /.box -->
-	</form>
 @stop
 
 @section('custom_js')
@@ -186,11 +186,9 @@
 				radioClass   : 'iradio_minimal-blue'
 			});
 
+			configjQueryMask('.phone');
+
 			configLightbox();
-			
 		});
-
-		
-
 	</script>
 @append

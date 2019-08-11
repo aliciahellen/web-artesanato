@@ -22,8 +22,6 @@ class ArtesaoTableSeeder extends Seeder
                 'endereco' => 'Rua Dom Aquino, 405 - Centro, Corumbá - MS, 79302-040',
                 'telefone' => '6732312715',
                 'email' => 'fundacaodeculturadecorumba@gmail.com',
-                'loc_latitude' => -19.0000933,
-                'loc_longitude' => -57.6491193,
                 'descricao' => 'Associação de artesãs que trabalham com o couro e escamas de peixe, produzindo brincos, colares, bolsas, cintos, entre outros produtos.',
             ]
         );
@@ -43,8 +41,6 @@ class ArtesaoTableSeeder extends Seeder
                 'endereco' => 'Rua Dom Aquino, 405 - Centro, Corumbá - MS, 79302-040',
                 'telefone' => '6732312715',
                 'email' => 'fundacaodeculturadecorumba@gmail.com',
-                'loc_latitude' => -19.0000933,
-                'loc_longitude' => -57.6491193,
                 'descricao' => 'Produção de peças de cestarias a partir da salsaparrilha e farinha de Bocaíuva.',
             ]
         );
@@ -61,8 +57,6 @@ class ArtesaoTableSeeder extends Seeder
                 'endereco' => 'Rua Dom Aquino, 405 - Centro, Corumbá - MS, 79302-040',
                 'telefone' => '6732312715',
                 'email' => 'fundacaodeculturadecorumba@gmail.com',
-                'loc_latitude' => -19.0000933,
-                'loc_longitude' => -57.6491193,
                 'descricao' => 'Produção de itens de tapeçaria e decorativos com uso de fibras de aguapés.',
             ]
         );
@@ -79,8 +73,6 @@ class ArtesaoTableSeeder extends Seeder
                 'endereco' => 'Rua Dom Aquino, 405 - Centro, Corumbá - MS, 79302-040',
                 'telefone' => '6732312715',
                 'email' => 'fundacaodeculturadecorumba@gmail.com',
-                'loc_latitude' => -19.0000933,
-                'loc_longitude' => -57.6491193,
                 'descricao' => 'Produção de itens de tapeçaria e decorativos com uso de fibras de aguapés.',
             ]
         );
@@ -97,8 +89,6 @@ class ArtesaoTableSeeder extends Seeder
                 'endereco' => 'Rua Dom Aquino, 405 - Centro, Corumbá - MS, 79302-040',
                 'telefone' => '6732312715',
                 'email' => 'fundacaodeculturadecorumba@gmail.com',
-                'loc_latitude' => -19.0000933,
-                'loc_longitude' => -57.6491193,
                 'descricao' => 'Produção de peças artesanais de entalhe em madeira.',
             ]
         );

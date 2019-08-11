@@ -25,7 +25,7 @@ Route::group(['prefix' => 'admin'], function () {
 		Route::post('/add', ['as' => 'add.post', 'uses' => 'ArtesaoController@addPost']);
 
 		Route::get('/edit/{id}', ['as' => 'edit.get', 'uses' => 'ArtesaoController@editGet'])->where('id', '\d+');
-		//Route::post('/edit/{id}', ['as' => 'edit.post', 'uses' => 'PlantaController@editPost'])->where('id', '\d+');
+		Route::post('/edit/{id}', ['as' => 'edit.post', 'uses' => 'ArtesaoController@editPost'])->where('id', '\d+');
 
 		Route::delete('/del/{id}', ['as' => 'delete', 'uses' => 'ArtesaoController@delete'])->where('id', '\d+');
 	});

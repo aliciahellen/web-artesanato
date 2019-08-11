@@ -1,15 +1,13 @@
 @extends('adminlte::page')
 
-
-
-@section('title', 'Cadastro Novo Artesão')
+@section('title', 'Visualizar Artesão')
 
 @section('content_header')
-    <h1>Adicionar <small>Novo Artesão</small></h1>
+    <h1>Visualização <small>Artesão</small></h1>
 @stop
 
 @section('content')
-	<form id="novo_artesao" action="{{ route('artesao.add.post') }}" method="post">
+	<form id="edicao_artesao" action="{{ route('artesao.edit.post', $artesao['id']) }}" method="post">
 		{!! csrf_field() !!}
 		<!-- SELECT2 EXAMPLE -->
 		<div class="box box-primary">
@@ -18,22 +16,11 @@
 			</div>
 			<!-- /.box-header -->
 			<div class="box-body">
-				@if ($errors->any())
-				<div class="alert alert-danger alert-dismissible">
-					<button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
-					<h4><i class="icon fa fa-ban"></i> Erros de Validação!</h4>
-					<ul>
-						@foreach ($errors->all() as $error)
-						<li>{{ $error }}</li>
-						@endforeach
-					</ul>
-				</div>
-				@endif
 				<div class="row">
 					<div class="col-md-6">
 						<div class="form-group {{ $errors->has('nome') ? 'has-error' : '' }}">
 							<label for="nome">Nome</label>
-							<input type="text" class="form-control" name="nome" id="nome" placeholder="Informe o Nome" value="{{ old('nome') }}">
+							<input type="text" class="form-control" name="nome" id="nome" placeholder="" value="{{ (old('nome') !== null ? old('nome') : $artesao['nome']) }}">
 							@if ($errors->has('nome'))
 							<span class="help-block">
 								{{ $errors->first('nome') }}
@@ -42,39 +29,36 @@
 						</div>
 						<div class="form-group {{ $errors->has('endereco') ? 'has-error' : '' }}">
 							<label for="nome">Endereço</label>
-							<input type="text" class="form-control" name="endereco" id="endereco" placeholder="Informe o Endereço" value="{{ old('endereco') }}">
+							<input type="text" class="form-control" name="endereco" id="endereco" placeholder="" value="{{ (old('endereco') !== null ? old('endereco') : $artesao['endereco']) }}">
 							@if ($errors->has('endereco'))
 							<span class="help-block">
 								{{ $errors->first('endereco') }}
 							</span>
 							@endif
 						</div>
-
 						<div class="form-group {{ $errors->has('telefone') ? 'has-error' : '' }}">
 							<label for="nome">Telefone</label>
-							<input type="text" class="form-control phone" name="telefone" id="telefone" placeholder="Informe o Telefone" value="{{ old('telefone') }}">
+							<input type="text" class="form-control phone" name="telefone" id="telefone" placeholder="" value="{{ (old('telefone') !== null ? old('telefone') : $artesao['telefone']) }}">
 							@if ($errors->has('telefone'))
 							<span class="help-block">
 								{{ $errors->first('telefone') }}
 							</span>
 							@endif
 						</div>
-
 						<div class="form-group {{ $errors->has('email') ? 'has-error' : '' }}">
-							<label for="email">E-mail</label>
-							<input type="text" class="form-control" name="email" id="email" placeholder="Informe o E-mail" value="{{ old('email') }}">
+							<label for="nome">E-mail</label>
+							<input type="text" class="form-control" name="email" id="email" placeholder="" value="{{ (old('email') !== null ? old('email') : $artesao['email']) }}">
 							@if ($errors->has('email'))
 							<span class="help-block">
 								{{ $errors->first('email') }}
 							</span>
 							@endif
 						</div>
-
 						<div class="form-group {{ $errors->has('tipos_artesanato') ? 'has-error' : '' }}">
 							<label>Tipos de Artesanato</label>
-							<select name="tipos_artesanato[]" class="form-control select2" multiple="multiple" data-placeholder="Selecione o(s) Tipos(s) de Artesanato" style="width: 100%;">
+							<select name="tipos_artesanato[]" class="form-control select2" multiple="multiple" data-placeholder="Selecione o(s) Tipo(s) de Artesanato(s)" style="width: 100%;">
 								@foreach($tipos_artesanato as $skey=>$tipo_artesanato)
-									<option value="{{$tipo_artesanato->id }}" {{ (collect(old('tipos_artesanato'))->contains($tipo_artesanato->id) ? 'selected' : '') }}>
+									<option value="{{$tipo_artesanato->id }}" {{ (old('tipos_artesanato') !== null ? (collect(old('tipos_artesanato'))->contains($tipo_artesanato->id) ? 'selected' : '') : ($artesao['tipos_artesanato']->contains($tipo_artesanato->id) ? 'selected' : '')) }}>
 										{{ $tipo_artesanato->nome }}
 									</option>
 								@endforeach
@@ -85,15 +69,16 @@
 							</span>
 							@endif
 						</div>
-						<!-- /.form-group -->
 					</div>
 					<!-- /.col -->
+					
 					<div class="col-md-6">
+
 						<div class="form-group {{ $errors->has('finalidades_producao') ? 'has-error' : '' }}">
 							<label>Finalidades da Produção</label>
-							<select name="finalidades_producao[]" class="form-control select2" multiple="multiple" data-placeholder="Selecione a(s) Finalidade(s) da Produção" style="width: 100%;">
+							<select name="finalidades_producao[]" class="form-control select2" multiple="multiple" data-placeholder="" style="width: 100%;">
 								@foreach($finalidades_producao as $skey=>$finalidade_producao)
-									<option value="{{$finalidade_producao->id }}" {{ (collect(old('finalidades_producao'))->contains($finalidade_producao->id) ? 'selected' : '') }}>
+									<option value="{{$finalidade_producao->id }}" {{ (old('finalidades_producao') !== null ? (collect(old('finalidades_producao'))->contains($finalidade_producao->id) ? 'selected' : '') : ($artesao['finalidades_producao']->contains($finalidade_producao->id) ? 'selected' : '')) }}>
 										{{ $finalidade_producao->nome }}
 									</option>
 								@endforeach
@@ -108,9 +93,9 @@
 
 						<div class="form-group {{ $errors->has('tecnicas_producao') ? 'has-error' : '' }}">
 							<label>Técnicas de Produção</label>
-							<select name="tecnicas_producao[]" class="form-control select2" multiple="multiple" data-placeholder="Selecione a(s) Técnica(s) de Produção" style="width: 100%;">
+							<select name="tecnicas_producao[]" class="form-control select2" multiple="multiple" data-placeholder="" style="width: 100%;">
 								@foreach($tecnicas_producao as $skey=>$tecnica_producao)
-									<option value="{{$tecnica_producao->id }}" {{ (collect(old('tecnicas_producao'))->contains($tecnica_producao->id) ? 'selected' : '') }}>
+									<option value="{{$tecnica_producao->id }}" {{ (old('tecnicas_producao') !== null ? (collect(old('tecnicas_producao'))->contains($tecnica_producao->id) ? 'selected' : '') : ($artesao['tecnicas_producao']->contains($tecnica_producao->id) ? 'selected' : '')) }}>
 										{{ $tecnica_producao->nome }}
 									</option>
 								@endforeach
@@ -125,7 +110,7 @@
 
 						<div class="form-group {{ $errors->has('descricao') ? 'has-error' : '' }}">
 							<label for="descricao">Descrição</label>
-							<textarea class="form-control" rows="8" name="descricao" id="descricao" placeholder="Informe a Descrição">{{ old('descricao') }}</textarea>
+							<textarea class="form-control" rows="8" name="descricao" id="descricao" placeholder="Informe a Descrição">{{ (old('descricao') !== null ? old('descricao') : $artesao['descricao']) }}</textarea>
 							@if ($errors->has('descricao'))
 							<span class="help-block">
 								{{ $errors->first('descricao') }}
@@ -142,20 +127,30 @@
 			</div>
 			<!-- /.box-body -->
 
+			@if(!empty(old('imagens')))
+				@php
+				$imagens = Helper::remove_empty_itens_array(old('imagens'), true);
+				@endphp
+			@else
+				@php
+				$imagens = $artesao->imagens->toArray();
+				@endphp
+			@endif
+
 			<div class="box-body">
 				<div class="row">
 					<div class="col-md-12">
-						<h4 class="box-title">Imagens</h4>
+						<h4 class="box-title">Imagens</h3>
 					</div>
 					<div class="col-md-12">
-						<button class="btn btn-success add-imagem" type="button" style="float:right;"><i class="glyphicon glyphicon-plus"></i> Nova Imagem</button>
+						<button class="btn btn-success add-imagem" type="button" style="float:right;" {{ (sizeof($imagens) < 6 ? '' : 'disabled' ) }}><i class="glyphicon glyphicon-plus"></i> Nova Imagem</button>
 					</div>
 				</div>
 				
 				<!-- Copy Fields -->
 				<div id="after-add-more">
-					@if(old('imagens') && is_array(old('imagens')))
-						@foreach(Helper::remove_empty_itens_array(old('imagens'), true) as $key => $imagem)
+					@if(!empty($imagens))
+						@foreach($imagens as $key => $imagem)
 						@if(is_numeric($key) && is_array($imagem))
 						<div class="row">
 							<div class="col-md-12">
@@ -163,8 +158,8 @@
 									<div class="row vertical-align">
 										<div class="col-xs-4">
 										<div class="content-img">
-											<a href="#" class="thumbnail" style="margin-bottom: 0px;">
-												<img id="imagem_preview_{{ $key }}" class="thumb-planta" src="{{ (!isset($imagem['url']) ? asset('public/img/img-planta-default-336x180.png') : $imagem['url']) }}" alt="Imagem {{ $key+1 }}" title="Imagem {{ $key+1 }}">
+											<a class="thumbnail gallery" style="margin-bottom: 0px;" data-lightbox="imagens_planta" data-title="{{ (isset($imagem['autor']) ? 'Autor: '.$imagem['autor'] : '') }} <br> {{ (isset($imagem['fonte']) ? 'Fonte: '.$imagem['fonte'] : '') }}" href="{{ (!isset($imagem['url']) ? asset('public/img/img-planta-default-336x180.png') : $imagem['url']) }}">
+												<img id="imagem_preview_{{ $key }}" class="thumb-planta" src="{{ (!isset($imagem['url']) ? asset('public/img/img-planta-default-336x180.png') : $imagem['url']) }}" alt="Imagem {{ $key+1 }}" title="Imagem {{ $key+1 }}"/>
 											</a>
 											<div id="overlay_{{ $key }}" class="overlay overlay-hide">
 												<div class="overlay-content"><img src="{{ asset('public/img/loading.gif') }}" alt="Carregando..."/></div>
@@ -202,12 +197,12 @@
 						@endif
 						@endforeach
 					@endif
+					
 				</div>
 			</div>
-
 			<div class="box-footer">
 				<button type="submit" class="btn btn-success" title="Salvar">Salvar</button>
-				<a href="{{ route('artesao.index.get') }}" class="btn btn-danger" title="Salvar">Cancelar</a>
+				<a href="{{ route('artesao.index.get') }}" class="btn btn-danger" title="Cancelar">Cancelar</a>
 			</div>
 		</div>
 		<!-- /.box -->
@@ -220,24 +215,8 @@
 		$(function () {
 			configSelect2();
 
-			configTagsInput('#nome_popular');
-			$('#nome_popular').on('beforeItemAdd', function(event) {
-				if (event.item !== event.item.toLowerCase()) {
-					event.cancel = true;
-					$(this).tagsinput('add', event.item.toLowerCase());
-				}
-			});
+			configLightbox();
 
-			configICheck();
-			function startiCheck(element, index){
-				configICheck('#'+element+index);
-				$('#'+element+index).on('ifChecked', function(event){
-					$('[id^='+element+']').not('#'+element+index).each(function(){
-						$(this).iCheck('uncheck');
-					});
-				});
-			}
-			
 			$(".add-imagem").click(function(){ 
 				var qtd_images = countImages();
 				if(qtd_images < 6){
@@ -249,7 +228,6 @@
 					$('.add-imagem').prop("disabled", true);
 				}
 			});
-			
 		});
 
 		function countImages(){
@@ -264,7 +242,7 @@
 		});
 
 		configjQueryMask('.phone');
-		$("#novo_artesao").submit(function() {
+		$("#edicao_artesao").submit(function() {
 			$(".phone").unmask();
 		});
 
