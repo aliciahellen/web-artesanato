@@ -227,7 +227,7 @@
 
 			<div class="box-footer">
 				<button type="submit" class="btn btn-success" title="Salvar">Salvar</button>
-				<a href="{{ route('planta.index.get') }}" class="btn btn-danger" title="Salvar">Cancelar</a>
+				<a href="{{ route('artesao.index.get') }}" class="btn btn-danger" title="Salvar">Cancelar</a>
 			</div>
 		</div>
 		<!-- /.box -->

@@ -5,7 +5,7 @@ use App\Artesao;
 use App\TipoArtesanato;
 use App\FinalidadeProducao;
 use App\TecnicaProducao;
-use App\Imagem2;
+use App\Imagem;
 
 class ArtesaoTableSeeder extends Seeder
 {
@@ -30,12 +30,12 @@ class ArtesaoTableSeeder extends Seeder
         $artesao->tipos_artesanato()->attach(TipoArtesanato::whereIn('cod', ['tradicional'])->get('id')->pluck('id')->toArray());
         $artesao->finalidades_producao()->attach(FinalidadeProducao::whereIn('cod', ['adorno_acess_vest', 'decorativo'])->get('id')->pluck('id')->toArray());
         $artesao->tecnicas_producao()->attach(TecnicaProducao::whereIn('cod', ['fiacao', 'montagem'])->get('id')->pluck('id')->toArray());
-        Imagem2::create(['url' => 'http://www.artesol.org.br/novo/app/webroot/files/uploads/ckfinder/images/IMG_4329.JPG', 'autor' => 'Renata Mendes', 'fonte' => 'Artesanato Solidário (Artesol)', 'artesao_id' => $artesao->id]);
-        Imagem2::create(['url' => 'http://www.artesol.org.br//files/uploads/gallery_items/item_1407.jpg', 'autor' => 'Renata Mendes', 'fonte' => 'Artesanato Solidário (Artesol)', 'artesao_id' => $artesao->id]);
-        Imagem2::create(['url' => 'http://www.artesol.org.br//files/uploads/gallery_items/item_1408.jpg', 'autor' => 'Renata Mendes', 'fonte' => 'Artesanato Solidário (Artesol)', 'artesao_id' => $artesao->id]);
-        Imagem2::create(['url' => 'http://www.artesol.org.br//files/uploads/gallery_items/item_1409.jpg', 'autor' => 'Renata Mendes', 'fonte' => 'Artesanato Solidário (Artesol)', 'artesao_id' => $artesao->id]);
-        Imagem2::create(['url' => 'http://www.artesol.org.br//files/uploads/gallery_items/item_1532.jpg', 'autor' => 'Renata Mendes', 'fonte' => 'Artesanato Solidário (Artesol)', 'artesao_id' => $artesao->id]);
-        Imagem2::create(['url' => 'http://www.artesol.org.br//files/uploads/gallery_items/item_1533.jpg', 'autor' => 'Renata Mendes', 'fonte' => 'Artesanato Solidário (Artesol)', 'artesao_id' => $artesao->id]);
+        Imagem::create(['url' => 'http://www.artesol.org.br/novo/app/webroot/files/uploads/ckfinder/images/IMG_4329.JPG', 'autor' => 'Renata Mendes', 'fonte' => 'Artesanato Solidário (Artesol)', 'artesao_id' => $artesao->id]);
+        Imagem::create(['url' => 'http://www.artesol.org.br//files/uploads/gallery_items/item_1407.jpg', 'autor' => 'Renata Mendes', 'fonte' => 'Artesanato Solidário (Artesol)', 'artesao_id' => $artesao->id]);
+        Imagem::create(['url' => 'http://www.artesol.org.br//files/uploads/gallery_items/item_1408.jpg', 'autor' => 'Renata Mendes', 'fonte' => 'Artesanato Solidário (Artesol)', 'artesao_id' => $artesao->id]);
+        Imagem::create(['url' => 'http://www.artesol.org.br//files/uploads/gallery_items/item_1409.jpg', 'autor' => 'Renata Mendes', 'fonte' => 'Artesanato Solidário (Artesol)', 'artesao_id' => $artesao->id]);
+        Imagem::create(['url' => 'http://www.artesol.org.br//files/uploads/gallery_items/item_1532.jpg', 'autor' => 'Renata Mendes', 'fonte' => 'Artesanato Solidário (Artesol)', 'artesao_id' => $artesao->id]);
+        Imagem::create(['url' => 'http://www.artesol.org.br//files/uploads/gallery_items/item_1533.jpg', 'autor' => 'Renata Mendes', 'fonte' => 'Artesanato Solidário (Artesol)', 'artesao_id' => $artesao->id]);
 
         $artesao = Artesao::create(
             [
@@ -51,9 +51,9 @@ class ArtesaoTableSeeder extends Seeder
         $artesao->tipos_artesanato()->attach(TipoArtesanato::whereIn('cod', ['tradicional'])->get('id')->pluck('id')->toArray());
         $artesao->finalidades_producao()->attach(FinalidadeProducao::whereIn('cod', ['decorativo', 'utilitario'])->get('id')->pluck('id')->toArray());
         $artesao->tecnicas_producao()->attach(TecnicaProducao::whereIn('cod', ['fiacao'])->get('id')->pluck('id')->toArray());
-        Imagem2::create(['url' => 'http://www.artesol.org.br//files/uploads/gallery_items/item_1407.jpg', 'autor' => 'Renata Mendes', 'fonte' => 'Artesanato Solidário (Artesol)', 'artesao_id' => $artesao->id]);
-        Imagem2::create(['url' => 'http://www.artesol.org.br//files/uploads/gallery_items/item_1407.jpg', 'autor' => 'Renata Mendes', 'fonte' => 'Artesanato Solidário (Artesol)', 'artesao_id' => $artesao->id]);
-        Imagem2::create(['url' => 'http://www.artesol.org.br//files/uploads/gallery_items/item_1407.jpg', 'autor' => 'Renata Mendes', 'fonte' => 'Artesanato Solidário (Artesol)', 'artesao_id' => $artesao->id]);
+        Imagem::create(['url' => 'http://www.artesol.org.br//files/uploads/gallery_items/item_1407.jpg', 'autor' => 'Renata Mendes', 'fonte' => 'Artesanato Solidário (Artesol)', 'artesao_id' => $artesao->id]);
+        Imagem::create(['url' => 'http://www.artesol.org.br//files/uploads/gallery_items/item_1407.jpg', 'autor' => 'Renata Mendes', 'fonte' => 'Artesanato Solidário (Artesol)', 'artesao_id' => $artesao->id]);
+        Imagem::create(['url' => 'http://www.artesol.org.br//files/uploads/gallery_items/item_1407.jpg', 'autor' => 'Renata Mendes', 'fonte' => 'Artesanato Solidário (Artesol)', 'artesao_id' => $artesao->id]);
 
         $artesao = Artesao::create(
             [
@@ -69,9 +69,9 @@ class ArtesaoTableSeeder extends Seeder
         $artesao->tipos_artesanato()->attach(TipoArtesanato::whereIn('cod', ['tradicional'])->get('id')->pluck('id')->toArray());
         $artesao->finalidades_producao()->attach(FinalidadeProducao::whereIn('cod', ['decorativo', 'utilitario'])->get('id')->pluck('id')->toArray());
         $artesao->tecnicas_producao()->attach(TecnicaProducao::whereIn('cod', ['fiacao'])->get('id')->pluck('id')->toArray());
-        Imagem2::create(['url' => 'http://www.artesol.org.br//files/uploads/gallery_items/item_1407.jpg', 'autor' => 'Renata Mendes', 'fonte' => 'Artesanato Solidário (Artesol)', 'artesao_id' => $artesao->id]);
-        Imagem2::create(['url' => 'http://www.artesol.org.br//files/uploads/gallery_items/item_1407.jpg', 'autor' => 'Renata Mendes', 'fonte' => 'Artesanato Solidário (Artesol)', 'artesao_id' => $artesao->id]);
-        Imagem2::create(['url' => 'http://www.artesol.org.br//files/uploads/gallery_items/item_1407.jpg', 'autor' => 'Renata Mendes', 'fonte' => 'Artesanato Solidário (Artesol)', 'artesao_id' => $artesao->id]);
+        Imagem::create(['url' => 'http://www.artesol.org.br//files/uploads/gallery_items/item_1407.jpg', 'autor' => 'Renata Mendes', 'fonte' => 'Artesanato Solidário (Artesol)', 'artesao_id' => $artesao->id]);
+        Imagem::create(['url' => 'http://www.artesol.org.br//files/uploads/gallery_items/item_1407.jpg', 'autor' => 'Renata Mendes', 'fonte' => 'Artesanato Solidário (Artesol)', 'artesao_id' => $artesao->id]);
+        Imagem::create(['url' => 'http://www.artesol.org.br//files/uploads/gallery_items/item_1407.jpg', 'autor' => 'Renata Mendes', 'fonte' => 'Artesanato Solidário (Artesol)', 'artesao_id' => $artesao->id]);
 
         $artesao = Artesao::create(
             [
@@ -87,9 +87,9 @@ class ArtesaoTableSeeder extends Seeder
         $artesao->tipos_artesanato()->attach(TipoArtesanato::whereIn('cod', ['tradicional'])->get('id')->pluck('id')->toArray());
         $artesao->finalidades_producao()->attach(FinalidadeProducao::whereIn('cod', ['decorativo'])->get('id')->pluck('id')->toArray());
         $artesao->tecnicas_producao()->attach(TecnicaProducao::whereIn('cod', ['fiacao'])->get('id')->pluck('id')->toArray());
-        Imagem2::create(['url' => 'http://www.artesol.org.br//files/uploads/gallery_items/item_1407.jpg', 'autor' => 'Renata Mendes', 'fonte' => 'Artesanato Solidário (Artesol)', 'artesao_id' => $artesao->id]);
-        Imagem2::create(['url' => 'http://www.artesol.org.br//files/uploads/gallery_items/item_1407.jpg', 'autor' => 'Renata Mendes', 'fonte' => 'Artesanato Solidário (Artesol)', 'artesao_id' => $artesao->id]);
-        Imagem2::create(['url' => 'http://www.artesol.org.br//files/uploads/gallery_items/item_1407.jpg', 'autor' => 'Renata Mendes', 'fonte' => 'Artesanato Solidário (Artesol)', 'artesao_id' => $artesao->id]);
+        Imagem::create(['url' => 'http://www.artesol.org.br//files/uploads/gallery_items/item_1407.jpg', 'autor' => 'Renata Mendes', 'fonte' => 'Artesanato Solidário (Artesol)', 'artesao_id' => $artesao->id]);
+        Imagem::create(['url' => 'http://www.artesol.org.br//files/uploads/gallery_items/item_1407.jpg', 'autor' => 'Renata Mendes', 'fonte' => 'Artesanato Solidário (Artesol)', 'artesao_id' => $artesao->id]);
+        Imagem::create(['url' => 'http://www.artesol.org.br//files/uploads/gallery_items/item_1407.jpg', 'autor' => 'Renata Mendes', 'fonte' => 'Artesanato Solidário (Artesol)', 'artesao_id' => $artesao->id]);
 
         $artesao = Artesao::create(
             [
@@ -105,9 +105,9 @@ class ArtesaoTableSeeder extends Seeder
         $artesao->tipos_artesanato()->attach(TipoArtesanato::whereIn('cod', ['tradicional'])->get('id')->pluck('id')->toArray());
         $artesao->finalidades_producao()->attach(FinalidadeProducao::whereIn('cod', ['decorativo'])->get('id')->pluck('id')->toArray());
         $artesao->tecnicas_producao()->attach(TecnicaProducao::whereIn('cod', ['entalhe_madeira', 'marcenaria'])->get('id')->pluck('id')->toArray());
-        Imagem2::create(['url' => 'http://www.artesol.org.br//files/uploads/gallery_items/item_1407.jpg', 'autor' => 'Renata Mendes', 'fonte' => 'Artesanato Solidário (Artesol)', 'artesao_id' => $artesao->id]);
-        Imagem2::create(['url' => 'http://www.artesol.org.br//files/uploads/gallery_items/item_1407.jpg', 'autor' => 'Renata Mendes', 'fonte' => 'Artesanato Solidário (Artesol)', 'artesao_id' => $artesao->id]);
-        Imagem2::create(['url' => 'http://www.artesol.org.br//files/uploads/gallery_items/item_1407.jpg', 'autor' => 'Renata Mendes', 'fonte' => 'Artesanato Solidário (Artesol)', 'artesao_id' => $artesao->id]);
+        Imagem::create(['url' => 'http://www.artesol.org.br//files/uploads/gallery_items/item_1407.jpg', 'autor' => 'Renata Mendes', 'fonte' => 'Artesanato Solidário (Artesol)', 'artesao_id' => $artesao->id]);
+        Imagem::create(['url' => 'http://www.artesol.org.br//files/uploads/gallery_items/item_1407.jpg', 'autor' => 'Renata Mendes', 'fonte' => 'Artesanato Solidário (Artesol)', 'artesao_id' => $artesao->id]);
+        Imagem::create(['url' => 'http://www.artesol.org.br//files/uploads/gallery_items/item_1407.jpg', 'autor' => 'Renata Mendes', 'fonte' => 'Artesanato Solidário (Artesol)', 'artesao_id' => $artesao->id]);
 
     }
 }

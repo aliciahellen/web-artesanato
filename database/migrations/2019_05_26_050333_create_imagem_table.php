@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateImagem2Table extends Migration
+class CreateImagemTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,7 +13,7 @@ class CreateImagem2Table extends Migration
      */
     public function up()
     {
-        Schema::create('tb_imagem2', function (Blueprint $table) {
+        Schema::create('tb_imagem', function (Blueprint $table) {
             $table->bigIncrements('id')->comment('ID da Imagem');
             $table->text('url')->nullable(false)->comment('URL da Imagem');
             $table->string('autor', 255)->nullable(true)->comment('Autor da Imagem');
@@ -32,6 +32,6 @@ class CreateImagem2Table extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('tb_imagem2');
+        Schema::dropIfExists('tb_imagem');
     }
 }

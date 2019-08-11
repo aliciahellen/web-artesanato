@@ -47,7 +47,7 @@ class Artesao extends Model
 
     public function imagens()
     {
-        $tb_nome = Imagem2::getTableName();
-        return $this->hasMany(Imagem2::class);
+        $tb_nome = Imagem::getTableName();
+        return $this->hasMany(Imagem::class);
     }
 }

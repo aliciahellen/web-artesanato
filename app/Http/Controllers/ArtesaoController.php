@@ -10,12 +10,10 @@ use App\TecnicaProducao;
 use App\Http\Requests\ArtesaoRequest;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Redirect;
-use App\Imagem2;
+use App\Imagem;
 
 class ArtesaoController extends Controller
 {
-    
-
     /**
      * Create a new controller instance.
      *
@@ -57,7 +55,7 @@ class ArtesaoController extends Controller
                 if(!empty($imagens)){
                     foreach ($imagens as $imagem) {
                         $imagem['artesao_id'] = $artesao->id;
-                        $artesao->imagens()->save(new Imagem2($imagem));
+                        $artesao->imagens()->save(new Imagem($imagem));
                     }
                 }    
                 $sucesso = true;
