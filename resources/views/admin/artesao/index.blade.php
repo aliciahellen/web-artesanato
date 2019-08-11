@@ -49,7 +49,7 @@
 								<tr>
 									<td style="vertical-align:middle;" class="align-middle">{{ $artesao->id }}</td>
 									<td style="vertical-align:middle;" class="align-middle">{{ str_limit($artesao->nome, 50) }}</td>
-									<td style="vertical-align:middle;" class="align-middle">{{ str_limit($artesao->endereco, 50) }}</td>
+									<td style="vertical-align:middle;" class="align-middle">{{ str_limit($artesao->endereco, 80) }}</td>
 									<td style="vertical-align:middle;" class="align-middle">{{ Helper::maskPhoneNumber($artesao->telefone) }}</td>
 									<td style="vertical-align:middle;" class="text-center align-middle">
 										<div style="display:block;min-width:50px !important;">

@@ -114,11 +114,11 @@ return [
             'url'  => 'admin/',
             'icon'        => 'home',
         ],
-		[
-            'text' => 'Plantas',
-            'url'  => 'admin/planta',
-            'icon'        => 'tree',
-        ],
+		//[
+        //    'text' => 'Plantas',
+        //    'url'  => 'admin/planta',
+        //    'icon'        => 'tree',
+        //],
         [
             'text' => 'Artesãos',
             'url'  => 'admin/artesao',

@@ -75,9 +75,7 @@
             "php artisan optimize"
         ],
         "database": [
-            "php artisan migrate:reset",
-            "php artisan migrate --force",
-            "php artisan db:seed"
+            "php artisan migrate:fresh --force --seed"
         ],
         "build-database": [
             "composer build",

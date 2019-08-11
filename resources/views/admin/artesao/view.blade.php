@@ -36,18 +36,19 @@
 							<label for="nome">E-mail</label>
 							<input type="text" class="form-control" name="email" id="email" placeholder="" value="{{ $artesao['email'] }}" disabled>
 						</div>
-						<div class="form-group">
+						<!-- <div class="form-group">
 							<label for="nome">Latitude</label>
 							<input type="text" class="form-control" name="latitude" id="latitude" placeholder="" value="{{ $artesao['loc_latitude'] }}" disabled>
 						</div>
 						<div class="form-group">
 							<label for="nome">Longitude</label>
 							<input type="text" class="form-control" name="longitude" id="longitude" placeholder="" value="{{ $artesao['loc_longitude'] }}" disabled>
-						</div>
+						</div> -->
 					</div>
 					<!-- /.col -->
+					
 					<div class="col-md-6">
-						<div class="form-group">
+						<!-- <div class="form-group">
 							<label>Tipos de Artesanato</label>
 							<select name="tipos_artesanato[]" class="form-control select2" multiple="multiple" data-placeholder="" style="width: 100%;" disabled>
 								@foreach($tipos_artesanato as $skey=>$tipo_artesanato)
@@ -56,8 +57,8 @@
 									</option>
 								@endforeach
 							</select>
-						</div>
-						<!-- /.form-group -->
+						</div> -->
+						<!-- /.col -->
 
 						<div class="form-group">
 							<label>Finalidades da Produção</label>

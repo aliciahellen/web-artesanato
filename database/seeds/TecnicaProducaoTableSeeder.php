@@ -14,9 +14,23 @@ class TecnicaProducaoTableSeeder extends Seeder
     {
         TecnicaProducao::create(
             [
+                'nome' => 'Entalhe em Madeira',
+                'cod' => 'entalhe_madeira',
+                'descricao' => 'É a técnica de talhar a madeira com uso de formão, goiva e lixa para obter uma escultura ou objetos decorativos ou utilitários.',
+            ]
+        );
+        TecnicaProducao::create(
+            [
                 'nome' => 'Fiação',
                 'cod' => 'fiacao',
                 'descricao' => 'Consiste no processo produtivo de retirada de fibras (da roca ou do cesto) para formar o fio, a torcedura das fibras (em poucas porções) e o enrolamento dos fios num suporte próprio (fuso).',
+            ]
+        );
+        TecnicaProducao::create(
+            [
+                'nome' => 'Marcenaria',
+                'cod' => 'marcenaria',
+                'descricao' => 'Técnica que surge da carpintaria como um dos ramos de trabalho artesanal na madeira, porém de forma mais delicada, com trabalhos em entalhe e torneamento.',
             ]
         );
         TecnicaProducao::create(
