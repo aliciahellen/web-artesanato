@@ -34,8 +34,7 @@ Route::group(['prefix' => 'admin'], function () {
 	Route::get('password/reset/{token}', 'Auth\ResetPasswordController@showResetForm')->name('password.reset');
 	Route::post('password/reset', 'Auth\ResetPasswordController@reset')->name('password.update');
 
-	
-	Route::get('/', 'HomeController@index')->name('home.index.get');
+	Route::get('/', ['as' => 'dashboard', 'uses' => 'HomeController@index']);
 
 	Route::group(['prefix' => 'artesao', 'as' => 'artesao.'], function () {
 		Route::get('/', ['as' => 'index.get', 'uses' => 'ArtesaoController@index']);

@@ -29,9 +29,23 @@ class LoginController extends Controller
      *
      * @var string
      */
-    protected $redirectTo;
+    protected $redirectTo = 'dashboard';
+
+    /**
+     * Where to redirect users after logout.
+     *
+     * @var string
+     */
+    protected $redirectAfterLogout = 'login';
 	
-	protected $attrFormNiceNames;
+    protected $attrFormNiceNames;
+    
+    use AuthenticatesUsers {
+        logout as performLogout;
+    }
+
+    
+    
 
     /**
      * Create a new controller instance.
@@ -41,7 +55,7 @@ class LoginController extends Controller
     public function __construct()
     {
         $this->middleware('guest')->except('logout');
-        $this->redirectTo = route('artesao.index.get');
+        $this->redirectTo = route($this->redirectTo);
 		$this->attrFormNiceNames = [
 			'email' => trans('custom.email'),
 			'senha' => trans('custom.password'),
@@ -101,5 +115,12 @@ class LoginController extends Controller
         $this->incrementLoginAttempts($request);
 
         return $this->sendFailedLoginResponse($request);
+    }
+
+    public function logout(Request $request){
+        $this->guard()->logout();
+        $request->session()->flush();
+        $request->session()->regenerate();
+        return redirect()->route($this->redirectAfterLogout);
     }
 }

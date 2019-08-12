@@ -85,7 +85,7 @@ return [
     |
     */
 
-    'dashboard_url' => 'inicio',
+    'dashboard_url' => '',
 
     'logout_url' => 'logout',
 

@@ -33,6 +33,6 @@ class HomeController extends Controller
             'finalidadesProducao' => FinalidadeProducao::count(),
             'tecnicasProducao' => TecnicaProducao::count(),
         ];
-        return view('home', compact('qtd'));
+        return view('dashboard', compact('qtd'));
     }
 }

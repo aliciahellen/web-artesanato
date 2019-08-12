@@ -38,7 +38,7 @@
                     <!-- /.navbar-collapse -->
             @else
             <!-- Logo -->
-            <a href="{{route('home.index.get') }}" class="logo">
+            <a href="{{route('dashboard') }}" class="logo">
                 <!-- mini logo for sidebar mini 50x50 pixels -->
                 <span class="logo-mini">{!! config('adminlte.logo_mini', '<b>App</b>') !!}</span>
                 <!-- logo for regular state and mobile devices -->
