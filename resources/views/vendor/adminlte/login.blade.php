@@ -29,13 +29,13 @@
                         </span>
                     @endif
                 </div>
-                <div class="form-group has-feedback {{ $errors->has('password') ? 'has-error' : '' }}">
-                    <input type="password" name="password" class="form-control"
+                <div class="form-group has-feedback {{ $errors->has('senha') ? 'has-error' : '' }}">
+                    <input type="password" name="senha" class="form-control"
                            placeholder="{{ trans('adminlte::adminlte.password') }}">
                     <span class="glyphicon glyphicon-lock form-control-feedback"></span>
-                    @if ($errors->has('password'))
+                    @if ($errors->has('senha'))
                         <span class="help-block">
-                            <strong>{{ $errors->first('password') }}</strong>
+                            <strong>{{ $errors->first('senha') }}</strong>
                         </span>
                     @endif
                 </div>

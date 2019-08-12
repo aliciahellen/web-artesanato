@@ -4,9 +4,7 @@
 
 use Illuminate\Database\Seeder;
 
-use App\User;
-
-  
+use App\Usuario;
 
 class UsuarioTableDataSeeder extends Seeder
 
@@ -24,8 +22,8 @@ class UsuarioTableDataSeeder extends Seeder
 
     public function run()
     {
-		User::create(['name' => 'Administrador','email' => 'admin@gmail.com', 'password' => bcrypt('12345678')]);
-		User::create(['name' => 'Usuário', 'email' => 'usuario@gmail.com', 'password' => bcrypt('12345678')]);
+		Usuario::create(['nome' => 'Administrador','email' => 'admin@gmail.com', 'senha' => bcrypt('12345678')]);
+		Usuario::create(['nome' => 'Usuário', 'email' => 'usuario@gmail.com', 'senha' => bcrypt('12345678')]);
     }
 
 }

@@ -15,7 +15,7 @@ return [
 
     'defaults' => [
         'guard' => 'web',
-        'passwords' => 'users',
+        'passwords' => 'usuarios',
     ],
 
     /*
@@ -38,12 +38,12 @@ return [
     'guards' => [
         'web' => [
             'driver' => 'session',
-            'provider' => 'users',
+            'provider' => 'usuarios',
         ],
 
         'api' => [
             'driver' => 'token',
-            'provider' => 'users',
+            'provider' => 'usuarios',
             'hash' => false,
         ],
     ],
@@ -66,9 +66,13 @@ return [
     */
 
     'providers' => [
-        'users' => [
-            'driver' => 'eloquent',
-            'model' => App\User::class,
+        // 'usuarios' => [
+        //     'driver' => 'eloquent',
+        //     'model' => App\Usuario::class,
+        // ],
+        'usuarios' => [
+            'driver' => 'customizado',
+            'model' => App\Usuario::class,
         ],
 
         // 'users' => [
@@ -93,9 +97,9 @@ return [
     */
 
     'passwords' => [
-        'users' => [
-            'provider' => 'users',
-            'table' => 'tb_password_reset',
+        'usuarios' => [
+            'provider' => 'usuarios',
+            'table' => 'tb_usuario_redefinir_senha',
             'expire' => 60,
         ],
     ],

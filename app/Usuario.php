@@ -7,7 +7,7 @@ use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use App\Notifications\MailResetPasswordNotification;
 
-class User extends Authenticatable
+class Usuario extends Authenticatable
 {
     use Notifiable;
 
@@ -21,12 +21,17 @@ class User extends Authenticatable
     public $timestamps = false;
 
     /**
+     * @var string
+     */
+    protected $rememberTokenName = 'token_redefinicao';
+
+    /**
      * The attributes that are mass assignable.
      *
      * @var array
      */
     protected $fillable = [
-        'name', 'email', 'password',
+        'nome', 'email', 'senha',
     ];
 
     /**
@@ -35,7 +40,7 @@ class User extends Authenticatable
      * @var array
      */
     protected $hidden = [
-        'password', 'remember_token',
+        'senha', 'token_redefinicao',
     ];
 
     /**
@@ -44,7 +49,7 @@ class User extends Authenticatable
      * @var array
      */
     protected $casts = [
-        'email_verified_at' => 'datetime',
+        'email_verificado_em' => 'datetime',
     ];
 
     /**
@@ -56,5 +61,16 @@ class User extends Authenticatable
     public function sendPasswordResetNotification($token)
     {
         $this->notify(new MailResetPasswordNotification($token, $this->name));
+    }
+
+    /**
+     * Get the password for the user.
+     *
+     * @return string
+     */
+    public function getAuthPassword()
+    {
+        return $this->senha;
+        
     }
 }
