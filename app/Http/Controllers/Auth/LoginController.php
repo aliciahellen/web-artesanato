@@ -41,7 +41,7 @@ class LoginController extends Controller
     public function __construct()
     {
         $this->middleware('guest')->except('logout');
-        $this->redirectTo = route('home.index.get');
+        $this->redirectTo = route('artesao.index.get');
 		$this->attrFormNiceNames = [
 			'email' => trans('custom.email'),
 			'senha' => trans('custom.password'),

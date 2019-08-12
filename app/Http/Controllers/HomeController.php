@@ -3,6 +3,10 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\TipoArtesanato;
+use App\FinalidadeProducao;
+use App\TecnicaProducao;
+use App\Artesao;
 
 class HomeController extends Controller
 {
@@ -23,6 +27,12 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('home');
+        $qtd = [
+            'artesaos' => Artesao::count(),
+            'tiposArtesanato' => TipoArtesanato::count(),
+            'finalidadesProducao' => FinalidadeProducao::count(),
+            'tecnicasProducao' => TecnicaProducao::count(),
+        ];
+        return view('home', compact('qtd'));
     }
 }
