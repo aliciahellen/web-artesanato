@@ -46,12 +46,12 @@
                 <div class="single-post info-area">
                     <div class="subscribe-area">
                         <h4 class="title"><b>Filtrar</b></h4>
-                        <div class="input-area">
-                            <form>
-                                <input class="email-input" type="text" placeholder="Informe o Nome">
-                                <button class="submit-btn" type="submit"><i class="ion-ios-search-strong"></i></button>
-                            </form>
-                        </div>
+						<div class="input-group">
+						   <input type="text" class="form-control" placeholder="Informe o Nome do Artesão">
+						   <span class="input-group-btn">
+								<button class="btn btn-default" type="button" type="submit" style="cursor: pointer;"><i class="ion-ios-search-strong"></i></button>
+						   </span>
+						</div>
                     </div>
                     <!-- subscribe-area -->
 
