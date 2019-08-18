@@ -2,7 +2,9 @@
 
 Repositório do Projeto "web-artesanato" - Trabalho de Conclusão de Curso - IFMS TEC INFO CB.
 
-[TOC]
+1. [Requisitos](#1-requisitos)
+2. [Instalação](#2-instalação)
+3. [Acesso](#3-acesso)
 
 ## 1. Requisitos
 
