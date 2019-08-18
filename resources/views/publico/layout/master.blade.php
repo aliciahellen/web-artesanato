@@ -56,6 +56,13 @@
         .post-area { 
             margin-bottom: 40px;
         }
+        .tag-area > button {
+            cursor: pointer;
+        }
+
+        .blog-area p {
+            text-align: left;
+        }
         @media only screen and (max-width: 992px) {
             .info-area .sidebar-area, .info-area .tag-area {
                 padding: 0 30px 30px !important;

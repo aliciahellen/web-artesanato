@@ -11,11 +11,11 @@
 |
 */
 
-//Route::redirect('/', 'admin');
-
 Route::group(['prefix' => '/'], function () {
 	Route::get('/', ['as' => 'index.get', 'uses' => 'PublicoController@index']);
-	Route::get('/artesao/{id}', ['as' => 'artesao.get', 'uses' => 'PublicoController@view'])->where('id', '\d+');;
+	Route::get('/artesao/{id}', ['as' => 'artesao.get', 'uses' => 'PublicoController@view'])->where('id', '\d+');
+	Route::get('/pesquisar', ['as' => 'pesquisar.get', 'uses' => 'PublicoController@getSearch']);
+	Route::post('/pesquisar', ['as' => 'pesquisar.post', 'uses' => 'PublicoController@postSearch']);
 });
 
 Route::group(['prefix' => 'admin'], function () {

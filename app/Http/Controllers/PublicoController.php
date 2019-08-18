@@ -161,4 +161,48 @@ class PublicoController extends Controller
         return response()->json($artesao, 200, array('Content-Type' => 'application/json; charset=utf-8'), JSON_UNESCAPED_UNICODE);
     }
 
+    public function getSearch(){
+        return redirect()->route('index.get');
+    }
+
+    public function postSearch(Request $request, Artesao $artesaos){
+        $filtrar = false;
+        $artesaos = $artesaos->newQuery();
+        if ($request->has('nome') && !empty($request->nome)) {
+            $artesaos->where('nome', 'LIKE', '%'.$request->nome.'%');
+            $filtrar = true;
+        }
+        if ($request->has('tipos_artesanato')) {
+            $artesaos->where(function ($query) use ($request) {
+                $query->whereHas('tipos_artesanato', function ($query) use ($request) {
+                    $query->whereIn(TipoArtesanato::getTableName().'.id', $request->tipos_artesanato);                   
+                });
+            });
+            $filtrar = true;
+        }
+        if ($request->has('finalidades_producao')) {
+            $artesaos->where(function ($query) use ($request) {
+                $query->whereHas('finalidades_producao', function ($query) use ($request) {
+                    $query->whereIn(FinalidadeProducao::getTableName().'.id', $request->finalidades_producao);                   
+                });
+            });
+            $filtrar = true;
+        }
+        if ($request->has('tecnicas_producao')) {
+            $artesaos->where(function ($query) use ($request) {
+                $query->whereHas('tecnicas_producao', function ($query) use ($request) {
+                    $query->whereIn(TecnicaProducao::getTableName().'.id', $request->tecnicas_producao);                   
+                });
+            });
+            $filtrar = true;
+        }
+        $tipos_artesanato = TipoArtesanato::all();
+        $finalidades_producao = FinalidadeProducao::all();
+        $tecnicas_producao = TecnicaProducao::all();    
+        $artesaos = $artesaos->with(['tipos_artesanato', 'finalidades_producao', 'tecnicas_producao', 'imagens'])->paginate(10);
+        if($filtrar == true){
+            return view('publico.home', compact('artesaos', 'tipos_artesanato', 'finalidades_producao', 'tecnicas_producao', 'filtrar'));
+        }
+        return view('publico.home', compact([], 'tipos_artesanato', 'finalidades_producao', 'tecnicas_producao', 'filtrar'));
+    }
 }
