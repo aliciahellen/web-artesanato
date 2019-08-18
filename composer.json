@@ -61,6 +61,7 @@
             "@php artisan key:generate --ansi"
         ],
 		"new-install": [
+		    "composer build",
             "composer run post-root-package-install",
 			"composer run post-create-project-cmd"
         ],
