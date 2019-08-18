@@ -33,7 +33,7 @@ class ArtesaoTableSeeder extends Seeder
         Imagem::create(['url' => 'http://www.artesol.org.br//files/uploads/gallery_items/item_1408.jpg', 'autor' => 'Renata Mendes', 'fonte' => 'Artesanato Solidário (Artesol)', 'artesao_id' => $artesao->id]);
         Imagem::create(['url' => 'http://www.artesol.org.br//files/uploads/gallery_items/item_1409.jpg', 'autor' => 'Renata Mendes', 'fonte' => 'Artesanato Solidário (Artesol)', 'artesao_id' => $artesao->id]);
         Imagem::create(['url' => 'http://www.artesol.org.br//files/uploads/gallery_items/item_1532.jpg', 'autor' => 'Renata Mendes', 'fonte' => 'Artesanato Solidário (Artesol)', 'artesao_id' => $artesao->id]);
-        Imagem::create(['url' => 'http://www.artesol.org.br//files/uploads/gallery_items/item_1533.jpg', 'autor' => 'Renata Mendes', 'fonte' => 'Artesanato Solidário (Artesol)', 'artesao_id' => $artesao->id]);
+        Imagem::create(['url' => 'https://i.ibb.co/3Ffmw67/20190510-101327.jpg', 'autor' => 'Autoria Própria', 'fonte' => 'Própria', 'artesao_id' => $artesao->id]);
 
         $artesao = Artesao::create(
             [
@@ -47,10 +47,12 @@ class ArtesaoTableSeeder extends Seeder
         $artesao->tipos_artesanato()->attach(TipoArtesanato::whereIn('cod', ['tradicional'])->get('id')->pluck('id')->toArray());
         $artesao->finalidades_producao()->attach(FinalidadeProducao::whereIn('cod', ['decorativo', 'utilitario'])->get('id')->pluck('id')->toArray());
         $artesao->tecnicas_producao()->attach(TecnicaProducao::whereIn('cod', ['fiacao'])->get('id')->pluck('id')->toArray());
-        Imagem::create(['url' => 'http://www.artesol.org.br//files/uploads/gallery_items/item_1407.jpg', 'autor' => 'Renata Mendes', 'fonte' => 'Artesanato Solidário (Artesol)', 'artesao_id' => $artesao->id]);
-        Imagem::create(['url' => 'http://www.artesol.org.br//files/uploads/gallery_items/item_1407.jpg', 'autor' => 'Renata Mendes', 'fonte' => 'Artesanato Solidário (Artesol)', 'artesao_id' => $artesao->id]);
-        Imagem::create(['url' => 'http://www.artesol.org.br//files/uploads/gallery_items/item_1407.jpg', 'autor' => 'Renata Mendes', 'fonte' => 'Artesanato Solidário (Artesol)', 'artesao_id' => $artesao->id]);
-
+        Imagem::create(['url' => 'https://i.ibb.co/dcKfLPd/20190510-100026.jpg', 'autor' => 'Autoria Própria', 'fonte' => 'Própria', 'artesao_id' => $artesao->id]);
+        Imagem::create(['url' => 'https://i.ibb.co/GdsNPm4/20190510-100136.jpg', 'autor' => 'Autoria Própria', 'fonte' => 'Própria', 'artesao_id' => $artesao->id]);
+        Imagem::create(['url' => 'https://i.ibb.co/WFRtFkD/20190510-100259.jpg', 'autor' => 'Autoria Própria', 'fonte' => 'Própria', 'artesao_id' => $artesao->id]);
+        Imagem::create(['url' => 'https://i.ibb.co/hCqpxLf/20190510-095544.jpg', 'autor' => 'Autoria Própria', 'fonte' => 'Própria', 'artesao_id' => $artesao->id]);
+        Imagem::create(['url' => 'https://i.ibb.co/x6Q8012/20190510-093554.jpg', 'autor' => 'Autoria Própria', 'fonte' => 'Própria', 'artesao_id' => $artesao->id]);
+        
         $artesao = Artesao::create(
             [
                 'nome' => 'Catarina',
@@ -63,9 +65,11 @@ class ArtesaoTableSeeder extends Seeder
         $artesao->tipos_artesanato()->attach(TipoArtesanato::whereIn('cod', ['tradicional'])->get('id')->pluck('id')->toArray());
         $artesao->finalidades_producao()->attach(FinalidadeProducao::whereIn('cod', ['decorativo', 'utilitario'])->get('id')->pluck('id')->toArray());
         $artesao->tecnicas_producao()->attach(TecnicaProducao::whereIn('cod', ['fiacao'])->get('id')->pluck('id')->toArray());
-        Imagem::create(['url' => 'http://www.artesol.org.br//files/uploads/gallery_items/item_1407.jpg', 'autor' => 'Renata Mendes', 'fonte' => 'Artesanato Solidário (Artesol)', 'artesao_id' => $artesao->id]);
-        Imagem::create(['url' => 'http://www.artesol.org.br//files/uploads/gallery_items/item_1407.jpg', 'autor' => 'Renata Mendes', 'fonte' => 'Artesanato Solidário (Artesol)', 'artesao_id' => $artesao->id]);
-        Imagem::create(['url' => 'http://www.artesol.org.br//files/uploads/gallery_items/item_1407.jpg', 'autor' => 'Renata Mendes', 'fonte' => 'Artesanato Solidário (Artesol)', 'artesao_id' => $artesao->id]);
+        Imagem::create(['url' => 'https://i.ibb.co/wwk6vXP/20190510-091755.jpg', 'autor' => 'Autoria Própria', 'fonte' => 'Própria', 'artesao_id' => $artesao->id]);
+        Imagem::create(['url' => 'https://i.ibb.co/xJm3M1H/20190510-092223.jpg', 'autor' => 'Autoria Própria', 'fonte' => 'Própria', 'artesao_id' => $artesao->id]);
+        Imagem::create(['url' => 'https://i.ibb.co/Fg0L538/20190510-092138.jpg', 'autor' => 'Autoria Própria', 'fonte' => 'Própria', 'artesao_id' => $artesao->id]);
+        Imagem::create(['url' => 'https://i.ibb.co/PDtf9xr/20190510-092237.jpg', 'autor' => 'Autoria Própria', 'fonte' => 'Própria', 'artesao_id' => $artesao->id]);
+        Imagem::create(['url' => 'https://i.ibb.co/wKkBZW8/20190510-091935.jpg', 'autor' => 'Autoria Própria', 'fonte' => 'Própria', 'artesao_id' => $artesao->id]);
 
         $artesao = Artesao::create(
             [
@@ -79,9 +83,11 @@ class ArtesaoTableSeeder extends Seeder
         $artesao->tipos_artesanato()->attach(TipoArtesanato::whereIn('cod', ['tradicional'])->get('id')->pluck('id')->toArray());
         $artesao->finalidades_producao()->attach(FinalidadeProducao::whereIn('cod', ['decorativo'])->get('id')->pluck('id')->toArray());
         $artesao->tecnicas_producao()->attach(TecnicaProducao::whereIn('cod', ['fiacao'])->get('id')->pluck('id')->toArray());
-        Imagem::create(['url' => 'http://www.artesol.org.br//files/uploads/gallery_items/item_1407.jpg', 'autor' => 'Renata Mendes', 'fonte' => 'Artesanato Solidário (Artesol)', 'artesao_id' => $artesao->id]);
-        Imagem::create(['url' => 'http://www.artesol.org.br//files/uploads/gallery_items/item_1407.jpg', 'autor' => 'Renata Mendes', 'fonte' => 'Artesanato Solidário (Artesol)', 'artesao_id' => $artesao->id]);
-        Imagem::create(['url' => 'http://www.artesol.org.br//files/uploads/gallery_items/item_1407.jpg', 'autor' => 'Renata Mendes', 'fonte' => 'Artesanato Solidário (Artesol)', 'artesao_id' => $artesao->id]);
+        Imagem::create(['url' => 'https://i.ibb.co/FWCvf78/20190510-085843.jpg', 'autor' => 'Autoria Própria', 'fonte' => 'Própria', 'artesao_id' => $artesao->id]);
+        Imagem::create(['url' => 'https://i.ibb.co/xJm3M1H/20190510-092223.jpg', 'autor' => 'Autoria Própria', 'fonte' => 'Própria', 'artesao_id' => $artesao->id]);
+        Imagem::create(['url' => 'https://i.ibb.co/WHH3xv6/20190510-085925.jpg', 'autor' => 'Autoria Própria', 'fonte' => 'Própria', 'artesao_id' => $artesao->id]);
+        Imagem::create(['url' => 'https://i.ibb.co/F0kFDq6/20190510-085919.jpg', 'autor' => 'Autoria Própria', 'fonte' => 'Própria', 'artesao_id' => $artesao->id]);
+        
 
         $artesao = Artesao::create(
             [
@@ -95,9 +101,10 @@ class ArtesaoTableSeeder extends Seeder
         $artesao->tipos_artesanato()->attach(TipoArtesanato::whereIn('cod', ['tradicional'])->get('id')->pluck('id')->toArray());
         $artesao->finalidades_producao()->attach(FinalidadeProducao::whereIn('cod', ['decorativo'])->get('id')->pluck('id')->toArray());
         $artesao->tecnicas_producao()->attach(TecnicaProducao::whereIn('cod', ['entalhe_madeira', 'marcenaria'])->get('id')->pluck('id')->toArray());
-        Imagem::create(['url' => 'http://www.artesol.org.br//files/uploads/gallery_items/item_1407.jpg', 'autor' => 'Renata Mendes', 'fonte' => 'Artesanato Solidário (Artesol)', 'artesao_id' => $artesao->id]);
-        Imagem::create(['url' => 'http://www.artesol.org.br//files/uploads/gallery_items/item_1407.jpg', 'autor' => 'Renata Mendes', 'fonte' => 'Artesanato Solidário (Artesol)', 'artesao_id' => $artesao->id]);
-        Imagem::create(['url' => 'http://www.artesol.org.br//files/uploads/gallery_items/item_1407.jpg', 'autor' => 'Renata Mendes', 'fonte' => 'Artesanato Solidário (Artesol)', 'artesao_id' => $artesao->id]);
+        Imagem::create(['url' => 'https://i.ibb.co/25MTwTV/20190510-090828.jpg', 'autor' => 'Autoria Própria', 'fonte' => 'Própria', 'artesao_id' => $artesao->id]);
+        Imagem::create(['url' => 'https://i.ibb.co/ZW2vx0m/20190510-091316.jpg', 'autor' => 'Autoria Própria', 'fonte' => 'Própria', 'artesao_id' => $artesao->id]);
+        Imagem::create(['url' => 'https://i.ibb.co/5MKWM9s/20190510-091525.jpg', 'autor' => 'Autoria Própria', 'fonte' => 'Própria', 'artesao_id' => $artesao->id]);
+        Imagem::create(['url' => 'https://i.ibb.co/VHkyJ69/20190510-091614.jpg', 'autor' => 'Autoria Própria', 'fonte' => 'Própria', 'artesao_id' => $artesao->id]);
 
     }
 }
