@@ -40,7 +40,7 @@ Repositório do Projeto "web-artesanato" - Trabalho de Conclusão de Curso - IFM
 > Sugestão de definição de collation: **utf8mb4_general_ci**
 
 
-**2.4.** Configure a conexão com os dados do banco de dados MySQL no arquivo .env:
+**2.4.** Configure a conexão com os dados do banco de dados MySQL no arquivo `.env`:
 
     DB_CONNECTION=mysql
     DB_HOST=127.0.0.1
