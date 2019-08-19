@@ -9,6 +9,7 @@ Repositório do Projeto "web-artesanato" - Trabalho de Conclusão de Curso - IFM
 ## 1. Requisitos
 
 - PHP >= 7.1.3
+- Composer >= 1.7.0
 - BCMath PHP Extension
 - Ctype PHP Extension
 - JSON PHP Extension
