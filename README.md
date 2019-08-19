@@ -61,7 +61,7 @@ Repositório do Projeto "web-artesanato" - Trabalho de Conclusão de Curso - IFM
 
 ## 3. Acesso
 
-> Caso a instalação tenha sido localizada em um host local, troque o domínio por **localhost**.
+> Caso a instalação tenha sido realizada em um host local, troque o domínio por **localhost**.
 
 **3.1.** Acesso à área pública da aplicação:
 
