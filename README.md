@@ -71,5 +71,5 @@ Repositório do Projeto "web-artesanato" - Trabalho de Conclusão de Curso - IFM
 **3.1.** Acesso à área privada da aplicação:
 
 > **URL:** http://dominio/web-artesanato/admin
-**Usuário:** admin@gmail.com
-**Senha:** 12345678
+> **Usuário:** admin@gmail.com
+> **Senha:** 12345678
