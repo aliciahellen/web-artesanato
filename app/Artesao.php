@@ -13,7 +13,10 @@ class Artesao extends Model
      */
     protected $table = 'tb_artesao';
 	
-    public $timestamps = false;
+    public $timestamps = true;
+
+    const CREATED_AT = 'dthr_cadastro';
+    const UPDATED_AT = 'dthr_alteracao';
     
     protected $fillable = [
         'id', 'nome', 'endereco', 'telefone', 'email', 'descricao', 'tipos_artesanato', 'finalidades_producao', 'tecnicas_producao', 'imagens'

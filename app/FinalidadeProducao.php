@@ -13,7 +13,10 @@ class FinalidadeProducao extends Model
      */
     protected $table = 'tb_finalidade_producao';
 	
-    public $timestamps = false;
+    public $timestamps = true;
+
+    const CREATED_AT = 'dthr_cadastro';
+    const UPDATED_AT = 'dthr_alteracao';
     
     protected $fillable = [
         'id', 'nome', 'cod', 'descricao', 'artesaos'

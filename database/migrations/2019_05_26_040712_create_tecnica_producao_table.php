@@ -18,8 +18,8 @@ class CreateTecnicaProducaoTable extends Migration
             $table->string('nome', 255)->nullable(false)->comment('Nome da Técnica de Produção');
             $table->string('cod', 50)->nullable(false)->unique()->comment('Código da Técnica de Produção');
             $table->text('descricao')->nullable(true)->comment('Descrição da Técnica de Produção');
-            $table->timestamp('dthr_cadastro')->default(DB::raw('CURRENT_TIMESTAMP'))->comment('Data/Hora de Cadastro: 2019-03-01 16:42:11');
-            $table->timestamp('dthr_alteracao')->default(DB::raw('CURRENT_TIMESTAMP'))->comment('Data/Hora de Alteração: 2019-03-01 16:42:11'); //PostgreSQL e MySQL
+            $table->timestamp('dthr_cadastro')->useCurrent()->comment('Data/Hora de Alteração: 2019-03-01 16:42:11');
+            $table->timestamp('dthr_alteracao')->useCurrent()->comment('Data/Hora de Alteração: 2019-03-01 16:42:11');
         });
     }
 

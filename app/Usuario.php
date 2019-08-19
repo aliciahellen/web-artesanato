@@ -18,7 +18,10 @@ class Usuario extends Authenticatable
      */
     protected $table = 'tb_usuario';
 
-    public $timestamps = false;
+    public $timestamps = true;
+
+    const CREATED_AT = 'dthr_cadastro';
+    const UPDATED_AT = 'dthr_alteracao';
 
     /**
      * @var string

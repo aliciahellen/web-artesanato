@@ -13,7 +13,10 @@ class Imagem extends Model
      */
     protected $table = 'tb_imagem';
 	
-    public $timestamps = false;
+    public $timestamps = true;
+
+    const CREATED_AT = 'dthr_cadastro';
+    const UPDATED_AT = 'dthr_alteracao';
     
     /**
      * The attributes that are mass assignable.

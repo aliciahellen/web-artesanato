@@ -13,7 +13,10 @@ class TipoArtesanato extends Model
      */
     protected $table = 'tb_tipo_artesanato';
 	
-    public $timestamps = false;
+    public $timestamps = true;
+
+    const CREATED_AT = 'dthr_cadastro';
+    const UPDATED_AT = 'dthr_alteracao';
     
     protected $fillable = [
         'id', 'nome', 'cod', 'descricao', 'artesaos'
